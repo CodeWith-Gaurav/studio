@@ -3,36 +3,49 @@
 @tailwind utilities;
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
+    --background: 60 56% 91%; /* Light beige #F5F5DC */
+    --foreground: 20 15% 25%; /* Dark brown/grey for readability on beige */
+
+    --muted: 60 50% 85%; /* Muted beige */
+    --muted-foreground: 20 10% 45%; /* Darker muted text */
+
+    --popover: 60 60% 95%; /* Slightly lighter beige for popovers */
+    --popover-foreground: 20 15% 25%;
+
+    --card: 60 60% 94%; /* Slightly lighter beige for cards */
+    --card-foreground: 20 15% 25%;
+
+    --border: 60 40% 82%; /* Beige-toned border */
+    --input: 60 50% 88%; /* Beige-toned input background */
+
+    --primary: 120 39% 49%; /* Earthy green #4CAF50 */
+    --primary-foreground: 0 0% 100%; /* White */
+
+    --secondary: 120 30% 75%; /* Muted version of primary green */
+    --secondary-foreground: 120 25% 25%; /* Dark green text on secondary */
+
+    --accent: 9 100% 64%; /* Tomato Red #FF6347 */
+    --accent-foreground: 0 0% 100%; /* White */
+
+    --destructive: 0 84.2% 60.2%; /* Default destructive red, can be overridden by accent if preferred */
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
+
+    --ring: 120 39% 49%; /* Primary color for rings/focus */
+
+    --radius: 0.5rem;
+
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
+
+    /* Sidebar specific variables - can be adjusted if sidebar is heavily used, defaults are fine */
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
@@ -42,31 +55,44 @@ body {
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+
   .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
+    --background: 20 15% 10%; /* Dark background */
+    --foreground: 60 30% 90%; /* Light foreground for dark bg */
+
+    --muted: 20 15% 20%;
+    --muted-foreground: 60 20% 65%;
+
+    --popover: 20 15% 8%;
+    --popover-foreground: 60 30% 90%;
+
+    --card: 20 15% 12%;
+    --card-foreground: 60 30% 90%;
+
+    --border: 20 15% 25%;
+    --input: 20 15% 22%;
+
+    --primary: 120 39% 55%; /* Slightly brighter green for dark mode */
+    --primary-foreground: 120 25% 15%; /* Darker green text */
+
+    --secondary: 120 30% 30%; /* Dark muted green */
+    --secondary-foreground: 120 25% 85%; /* Lighter green text */
+
+    --accent: 9 100% 70%; /* Slightly brighter red for dark mode */
+    --accent-foreground: 0 0% 0%; /* Black text on bright red */
+    
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
+
+    --ring: 120 39% 55%;
+
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+
+    /* Dark Sidebar specific variables */
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
