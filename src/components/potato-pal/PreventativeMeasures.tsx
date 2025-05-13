@@ -57,12 +57,25 @@ export function PreventativeMeasures() {
   if (!data) return null;
 
   return (
-    <article className="space-y-3">
+    <article className="space-y-4">
       <div className="flex items-center gap-2 text-lg font-semibold text-foreground">
         <LifeBuoy className="h-5 w-5 text-primary" />
-        <h3>General Potato Health Tips</h3>
+        <h3>General Potato Health Tips / आलू के स्वास्थ्य के लिए सामान्य सुझाव</h3>
       </div>
-      <p className="text-muted-foreground whitespace-pre-line">{data.suggestions}</p>
+
+      {data.suggestions && (
+        <div>
+          <h4 className="text-md font-semibold mt-2 text-foreground/90">English Suggestions:</h4>
+          <p className="text-muted-foreground whitespace-pre-line">{data.suggestions}</p>
+        </div>
+      )}
+      
+      {data.suggestionsHindi && (
+        <div className="mt-3">
+          <h4 className="text-md font-semibold text-foreground/90">हिन्दी सुझाव (Hindi Suggestions):</h4>
+          <p className="text-muted-foreground whitespace-pre-line">{data.suggestionsHindi}</p>
+        </div>
+      )}
     </article>
   );
 }

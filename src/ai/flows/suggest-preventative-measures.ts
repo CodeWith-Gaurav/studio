@@ -1,7 +1,7 @@
 // 'use server';
 
 /**
- * @fileOverview Suggest preventative measures for healthy potato plants.
+ * @fileOverview Suggest preventative measures for healthy potato plants in English and Hindi.
  *
  * - suggestPreventativeMeasures - A function that provides suggestions for maintaining potato plant health.
  * - SuggestPreventativeMeasuresInput - The input type for the suggestPreventativeMeasures function.
@@ -21,7 +21,10 @@ export type SuggestPreventativeMeasuresInput = z.infer<typeof SuggestPreventativ
 const SuggestPreventativeMeasuresOutputSchema = z.object({
   suggestions: z
     .string()
-    .describe('A list of suggestions to keep potato plants healthy and prevent diseases.'),
+    .describe('A list of suggestions in English to keep potato plants healthy and prevent diseases.'),
+  suggestionsHindi: z
+    .string()
+    .describe('A list of suggestions in Hindi to keep potato plants healthy and prevent diseases.'),
 });
 export type SuggestPreventativeMeasuresOutput = z.infer<typeof SuggestPreventativeMeasuresOutputSchema>;
 
@@ -37,7 +40,9 @@ const prompt = ai.definePrompt({
 
   Based on the fact that the plant is a potato plant, provide a list of preventative measures to keep the plant healthy and avoid diseases.
   Do not mention any specific disease, but provide suggestions that would make the plant healthier and less susceptible to diseases.
-  Give a detailed list of suggestions.`,
+  Give a detailed list of suggestions.
+  Provide the suggestions in two languages: English and Hindi.
+  Output the English suggestions in the 'suggestions' field and the Hindi suggestions in the 'suggestionsHindi' field.`,
 });
 
 const suggestPreventativeMeasuresFlow = ai.defineFlow(
@@ -51,3 +56,4 @@ const suggestPreventativeMeasuresFlow = ai.defineFlow(
     return output!;
   }
 );
+

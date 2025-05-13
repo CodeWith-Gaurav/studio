@@ -61,12 +61,25 @@ export function DiseaseInfo({ diseaseName }: DiseaseInfoProps) {
   if (!data) return null;
 
   return (
-    <article className="space-y-3">
+    <article className="space-y-4">
       <div className="flex items-center gap-2 text-lg font-semibold text-foreground">
         <Info className="h-5 w-5 text-accent" />
-        <h3>About {diseaseName}</h3>
+        <h3>About {diseaseName} / {diseaseName === "Early Blight" ? "अगेती झुलसा" : "पछेती झुलसा"} के बारे में</h3>
       </div>
-      <p className="text-muted-foreground whitespace-pre-line">{data.summary}</p>
+      
+      {data.summary && (
+        <div>
+          <h4 className="text-md font-semibold mt-2 text-foreground/90">English Summary:</h4>
+          <p className="text-muted-foreground whitespace-pre-line">{data.summary}</p>
+        </div>
+      )}
+      
+      {data.summaryHindi && (
+        <div className="mt-3">
+          <h4 className="text-md font-semibold text-foreground/90">हिन्दी सारांश (Hindi Summary):</h4>
+          <p className="text-muted-foreground whitespace-pre-line">{data.summaryHindi}</p>
+        </div>
+      )}
     </article>
   );
 }

@@ -2,7 +2,7 @@
 'use server';
 
 /**
- * @fileOverview Generates a summary of the detected potato leaf disease, including causes and recommended actions.
+ * @fileOverview Generates a summary of the detected potato leaf disease, including causes and recommended actions, in English and Hindi.
  *
  * - generateDiseaseSummary - A function that generates the disease summary.
  * - GenerateDiseaseSummaryInput - The input type for the generateDiseaseSummary function.
@@ -22,7 +22,10 @@ export type GenerateDiseaseSummaryInput = z.infer<typeof GenerateDiseaseSummaryI
 const GenerateDiseaseSummaryOutputSchema = z.object({
   summary: z
     .string()
-    .describe('A brief summary of the disease, including potential causes and recommended actions.'),
+    .describe('A brief summary of the disease in English, including potential causes and recommended actions.'),
+  summaryHindi: z
+    .string()
+    .describe('A brief summary of the disease in Hindi, including potential causes and recommended actions.'),
 });
 export type GenerateDiseaseSummaryOutput = z.infer<typeof GenerateDiseaseSummaryOutputSchema>;
 
@@ -35,6 +38,8 @@ const prompt = ai.definePrompt({
   input: {schema: GenerateDiseaseSummaryInputSchema},
   output: {schema: GenerateDiseaseSummaryOutputSchema},
   prompt: `You are an expert in potato plant diseases. Generate a brief summary of the disease, including potential causes and recommended actions.
+Provide the summary in two languages: English and Hindi.
+Output the English summary in the 'summary' field and the Hindi summary in the 'summaryHindi' field.
 
 Disease Name: {{{diseaseName}}}`,
 });
@@ -50,3 +55,4 @@ const generateDiseaseSummaryFlow = ai.defineFlow(
     return output!;
   }
 );
+
