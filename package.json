@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack -p 9002",
-    "genkit:dev": "npx genkit start src/ai/dev.ts",
-    "genkit:watch": "npx genkit start src/ai/dev.ts",
+    "genkit:dev": "node ./node_modules/.bin/genkit start src/ai/dev.ts",
+    "genkit:watch": "node ./node_modules/.bin/genkit start src/ai/dev.ts",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
