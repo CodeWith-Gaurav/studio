@@ -1,5 +1,9 @@
 import { config } from 'dotenv';
-config();
+config(); // Loads .env file variables into process.env
 
-import '@/ai/flows/generate-disease-summary.ts';
-import '@/ai/flows/suggest-preventative-measures.ts';
+import '@/ai/genkit'; // Ensures the global 'ai' object from genkit.ts is initialized
+
+// When you create Genkit flows in the src/ai/flows/ directory,
+// you'll need to import them here so Genkit can discover them.
+// For example:
+// import './flows/your-flow-name';

@@ -1,5 +1,14 @@
-# Firebase Studio
+# Potato Pal - Next.js, Genkit, ShadCN
 
-This is a NextJS starter in Firebase Studio.
+This is the starter project for Potato Pal.
 
-To get started, take a look at src/app/page.tsx.
+## Setup
+
+Follow the setup guide provided by the App Prototyper AI.
+
+## Running the Development Servers
+
+1.  **Genkit:** `npm run genkit:watch`
+2.  **Next.js:** `npm run dev`
+
+The application will be available at http://localhost:9002 (or the port specified in the terminal).
