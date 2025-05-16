@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useRef, useEffect, useCallback } from 'react';
@@ -6,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Camera, Zap, RefreshCw, AlertTriangle } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { Card, CardContent } from '@/components/ui/card';
+import { Label } from '@/components/ui/label';
 
 interface CameraCaptureProps {
   onImageCapture: (imageDataUrl: string) => void;
@@ -165,5 +167,3 @@ export function CameraCapture({ onImageCapture, disabled }: CameraCaptureProps) 
     </div>
   );
 }
-// Add Label to imports
-import { Label } from '@/components/ui/label';

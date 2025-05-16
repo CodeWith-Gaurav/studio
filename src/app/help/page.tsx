@@ -1,3 +1,4 @@
+
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { DiseaseInfo } from '@/components/potato-pal/DiseaseInfo';
 import { PreventativeMeasures } from '@/components/potato-pal/PreventativeMeasures';
